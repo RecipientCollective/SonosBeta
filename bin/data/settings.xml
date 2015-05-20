@@ -1,0 +1,14 @@
+<IR_Capturing>
+	<Instance>TEST</Instance>
+<IR_Capturing/>
+	<name>DEFAULT</name>
+	<target_color>1</target_color>
+	<blur_diff>10</blur_diff>
+	<blur_input>0</blur_input>
+	<min_radius>9</min_radius>
+	<max_radius>100</max_radius>
+	<contour_threshold>96.9</contour_threshold>
+	<persistence>291</persistence>
+	<max_distance>32</max_distance>
+	<syphon>1</syphon>
+</IR_Capturing>
