@@ -58,7 +58,7 @@
 #define DEVICE_NAME "DV-VCR"
 #define FRAMERATE 60
 #define CIRCLE_RESOLUTION 40
-#define FILENAME "videos/retro-ir.mov"
+#define FILENAME "videos/Movie_okjpg.mov"
 #define SCALE_FACTOR 0.5
 
 

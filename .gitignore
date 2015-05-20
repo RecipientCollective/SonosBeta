@@ -2,6 +2,9 @@
 # openFrameworks patterns
 #########################
 
+# videos
+bin/data/videos
+
 # build files
 openFrameworks.a
 openFrameworksDebug.a
