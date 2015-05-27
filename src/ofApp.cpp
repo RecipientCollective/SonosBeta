@@ -24,6 +24,7 @@ void ofApp::setup()
     guiSetup();
     blobSetup();
     oscSetup();
+    
 #ifdef _USE_SYPHON_VIDEO
     syphonSetup();
 #endif
@@ -51,13 +52,6 @@ void ofApp::draw()
         ofPopStyle();
     }
     
-    if (showGui)
-    {
-        ofPushStyle();
-        guiSonos->draw();
-        ofPopStyle();
-    }
-
 #ifdef _USE_SYPHON_VIDEO
     syphonDraw();
 #endif
@@ -81,6 +75,7 @@ void ofApp::keyPressed(int key)
     {
         case 'g':
             showGui = !showGui;
+            guiSonos->setVisible(showGui);
             break;
         case 'h':
             showDebug = !showDebug;

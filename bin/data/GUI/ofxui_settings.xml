@@ -2,23 +2,23 @@
     <Kind>40</Kind>
     <Name>OFX_UI_WIDGET_CANVAS</Name>
     <IsMinified>0</IsMinified>
-    <XPosition>757.000000000</XPosition>
-    <YPosition>26.000000000</YPosition>
+    <XPosition>750.000000000</XPosition>
+    <YPosition>16.000000000</YPosition>
 </Canvas>
 <Widget>
     <Kind>12</Kind>
     <Name>INSTANCE_NAME</Name>
-    <Value>video</Value>
+    <Value>video&#x1B;</Value>
 </Widget>
 <Widget>
     <Kind>42</Kind>
     <Name>BLUR DIFF</Name>
-    <Value>0</Value>
+    <Value>10</Value>
 </Widget>
 <Widget>
     <Kind>42</Kind>
     <Name>BLUR INPUT</Name>
-    <Value>28</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -33,20 +33,20 @@
 <Widget>
     <Kind>42</Kind>
     <Name>MAX AREA RADIUS</Name>
-    <Value>92</Value>
+    <Value>273</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>CONTOUR THRESHOLD</Name>
-    <Value>15.073891640</Value>
+    <Value>17.586206436</Value>
 </Widget>
 <Widget>
     <Kind>42</Kind>
     <Name>BLOB PERSISTENCE</Name>
-    <Value>174</Value>
+    <Value>266</Value>
 </Widget>
 <Widget>
     <Kind>42</Kind>
     <Name>BLOB MAX DISTANCE</Name>
-    <Value>112</Value>
+    <Value>343</Value>
 </Widget>

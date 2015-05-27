@@ -90,10 +90,6 @@
 // considers it a new object.
 #define BLOB_MAX_DISTANCE 32
 
-// OTHER DEFAULT VALUES: you can overwrite with GUI/Keys/Settings
-#define APP_TITLE "IR Capturing"
-#define APP_INSTANCE "DEFAULT"
-
 
 class ofApp : public ofBaseApp
 {

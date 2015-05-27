@@ -106,11 +106,13 @@ void ofApp::drawDebugVideo()
         }
     }
     
+    // END OF SCALE scalef (for input drawing)
+    ofPopMatrix();
     
     if (showLabels)
     {
         ofPushMatrix();
-        ofScale(4.0, 4.0);
+        ofTranslate(margin, ofGetHeight() - 50);
         // this chunk of code visualizes the creation and destruction of labels
         const vector<unsigned int>& currentLabels = tracker.getCurrentLabels();
         const vector<unsigned int>& previousLabels = tracker.getPreviousLabels();
@@ -138,10 +140,6 @@ void ofApp::drawDebugVideo()
         }
         ofPopMatrix();
     }
-    
-    // END OF SCALE scalef (for input drawing)
-    ofPopMatrix();
-    
     
     if (useTargetColor)
     {

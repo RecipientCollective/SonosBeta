@@ -97,17 +97,20 @@ void ofApp::blobUpdate()
             blur(input, blurInputImage);
         }
         input.update();
+        
         if (bLearnBackground == true)
         {
             copy(input, background);
             bLearnBackground = false;
         }
         absdiff(background, input, diff);
+        
         if (blurLevel > 0)
         {
             blur(diff,blurLevel);
         }
         diff.update();
+        
         contourFinder.findContours(diff);
     }
 }
