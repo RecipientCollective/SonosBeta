@@ -19,6 +19,9 @@
 		483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78D67A00EB899FAC09430597 /* ofxLabel.cpp */; };
 		4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */; };
 		510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6DEF695B88BA5FAACEAA937 /* UdpSocket.cpp */; };
+		55B167571B15BC5C00EDF6B3 /* ofAppSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B167561B15BC5C00EDF6B3 /* ofAppSetup.cpp */; };
+		55B167591B15BCD500EDF6B3 /* ofAppUpdate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B167581B15BCD500EDF6B3 /* ofAppUpdate.cpp */; };
+		55B1675B1B15BD2100EDF6B3 /* ofAppDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55B1675A1B15BD2100EDF6B3 /* ofAppDraw.cpp */; };
 		55B9AB271B0B300400FDBD77 /* opencv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B9AB261B0B300400FDBD77 /* opencv.a */; };
 		55B9AB2D1B0B351C00FDBD77 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B9AB2C1B0B351C00FDBD77 /* Syphon.framework */; };
 		55B9AB2E1B0B353300FDBD77 /* Syphon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55B9AB2C1B0B351C00FDBD77 /* Syphon.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -130,6 +133,9 @@
 		48974F980F51769171D0B2F5 /* IpEndpointName.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = IpEndpointName.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h; sourceTree = SOURCE_ROOT; };
 		4E95FB446A9C9C6F0DE12D75 /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscPrintReceivedElements.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.h; sourceTree = SOURCE_ROOT; };
 		52AFA1F08C420992CAAAE648 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSlider.h; path = ../../../addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
+		55B167561B15BC5C00EDF6B3 /* ofAppSetup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofAppSetup.cpp; sourceTree = "<group>"; };
+		55B167581B15BCD500EDF6B3 /* ofAppUpdate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofAppUpdate.cpp; sourceTree = "<group>"; };
+		55B1675A1B15BD2100EDF6B3 /* ofAppDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofAppDraw.cpp; sourceTree = "<group>"; };
 		55B9AB261B0B300400FDBD77 /* opencv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = opencv.a; path = ../../../addons/ofxOpenCv/libs/opencv/lib/osx/opencv.a; sourceTree = "<group>"; };
 		55B9AB2C1B0B351C00FDBD77 /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = "<group>"; };
 		55B9AB301B0B377000FDBD77 /* SyphonNameboundClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SyphonNameboundClient.m; path = ../../../addons/ofxSyphon/libs/Syphon/src/SyphonNameboundClient.m; sourceTree = "<group>"; };
@@ -610,6 +616,9 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				55B167561B15BC5C00EDF6B3 /* ofAppSetup.cpp */,
+				55B167581B15BCD500EDF6B3 /* ofAppUpdate.cpp */,
+				55B1675A1B15BD2100EDF6B3 /* ofAppDraw.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -749,10 +758,12 @@
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
+				55B167591B15BCD500EDF6B3 /* ofAppUpdate.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
+				55B167571B15BC5C00EDF6B3 /* ofAppSetup.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
@@ -769,6 +780,7 @@
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
+				55B1675B1B15BD2100EDF6B3 /* ofAppDraw.cpp in Sources */,
 				B6840996567E78436F7ECFAB /* ETF.cpp in Sources */,
 				F76B4A79BD8DE4854141CB47 /* fdog.cpp in Sources */,
 				EBCDE831EFAE08274E799C97 /* Calibration.cpp in Sources */,
