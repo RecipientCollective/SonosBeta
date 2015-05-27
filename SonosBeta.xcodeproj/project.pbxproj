@@ -325,6 +325,7 @@
 		49A9E39C52C2DF4DDA1E185F /* src */ = {
 			isa = PBXGroup;
 			children = (
+				55B9AB301B0B377000FDBD77 /* SyphonNameboundClient.m */,
 				0FB83AC7747296DD35C1C295 /* ofxSyphon.h */,
 				01FAC3552E00C3620035EA2F /* ofxSyphonClient.h */,
 				03EA4DA95B5E1B8409FC058E /* ofxSyphonClient.mm */,
@@ -599,7 +600,6 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
-				55B9AB301B0B377000FDBD77 /* SyphonNameboundClient.m */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
@@ -695,7 +695,7 @@
 		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0620;
 			};
 			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "SonosBeta" */;
 			compatibilityVersion = "Xcode 3.2";
