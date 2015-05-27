@@ -18,8 +18,6 @@ using namespace cv;
 #ifdef _USE_SYPHON_VIDEO
 void ofApp::syphonDraw()
 {
-    syphonScreenServer.publishScreen();
-    syphonDiffTextureServer.publishTexture(&diff.getTextureReference());
     // draw static into texture.
     ofPushStyle();
     ofPushMatrix();
@@ -144,21 +142,6 @@ void ofApp::drawDebugVideo()
     // END OF SCALE scalef (for input drawing)
     ofPopMatrix();
     
-    if (showLabels)
-    {
-        ofPushMatrix();
-        ofTranslate(margin, spacery + margin*2);
-        ofDrawBitmapString("LABELS LIFE LEGEND:",0,0);
-        ofSetColor(cyanPrint);
-        ofDrawBitmapString("[current labels]",0,margin);
-        ofSetColor(magentaPrint);
-        ofDrawBitmapString("[previous labels]",0,margin*2);
-        ofSetColor(yellowPrint);
-        ofDrawBitmapString("[new labels]",0,margin*3);
-        ofSetColor(ofColor::white);
-        ofDrawBitmapString("[dead labels]",0,margin*4);
-        ofPopMatrix();
-    }
     
     if (useTargetColor)
     {
@@ -173,11 +156,4 @@ void ofApp::drawDebugVideo()
         ofRect(0, 0, 64, 64);
         ofPopMatrix();
     }
-}
-
-// draw help (always)
-void ofApp::drawHelp()
-{
-    ofSetHexColor(0xffffff);
-    ofDrawBitmapString(helpStr, margin, OUTPUT_HEIGHT - margin*2);
 }

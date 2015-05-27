@@ -8,6 +8,7 @@ using namespace cv;
 //--------------------------------------------------------------
 void ofApp::setup()
 {
+    
 #ifdef DEBUG
     ofSetLogLevel(OF_LOG_VERBOSE);
 #else
@@ -17,6 +18,7 @@ void ofApp::setup()
     ofLogNotice("START SETUP");
     showDebug = true;
     showLabels = true;
+    
     ofSetup();
     cameraSetup();
     guiSetup();
@@ -25,6 +27,10 @@ void ofApp::setup()
 #ifdef _USE_SYPHON_VIDEO
     syphonSetup();
 #endif
+    
+    // setup draw
+    ofBackground(0);
+    
     ofLogNotice("END SETUP");
 }
 
@@ -38,8 +44,6 @@ void ofApp::update()
 //--------------------------------------------------------------
 void ofApp::draw()
 {
-    ofBackground(0, 0, 0);
-    
     if (showDebug)
     {
         ofPushStyle();
@@ -50,13 +54,9 @@ void ofApp::draw()
     if (showGui)
     {
         ofPushStyle();
-        gui.draw();
+        guiSonos->draw();
         ofPopStyle();
     }
-    
-    ofPushStyle();
-    drawHelp();
-    ofPopStyle();
 
 #ifdef _USE_SYPHON_VIDEO
     syphonDraw();
@@ -66,13 +66,11 @@ void ofApp::draw()
 //--------------------------------------------------------------
 void ofApp::exit()
 {
+    // ofxUI
+    guiSonos ->saveSettings(GUISETTINGS);
+    delete guiSonos;
+    
     //magari c'è da chiudere la cam o i video da verificare;
-    minAreaRadius.removeListener(this, & ofApp::minRadiusChanged);
-    maxAreaRadius.removeListener(this, &ofApp::maxRadiusChanged);
-    contourThreshold.removeListener(this, &ofApp::contourThresholdChanged);
-    blobPersistence.removeListener(this, &ofApp::blobPersistenceChanged);
-    blobMaxDistance.removeListener(this, &ofApp::blobMaxDistanceChanged);
-    useTargetColor.removeListener(this, &ofApp::useTargetColorChanged);
     OF_EXIT_APP(0);
 }
 

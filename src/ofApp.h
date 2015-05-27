@@ -37,7 +37,8 @@
 #include "ofMain.h"
 #include "ofxCv.h"
 #include "ofxOsc.h"
-#include "ofxGui.h"
+#include "ofxUI.h"
+
 
 // Uncomment to activate VideoLive
 //#define _USE_LIVE_VIDEO
@@ -47,7 +48,7 @@
 #include "ofxSyphon.h"
 #endif
 
-// FIXED VAUES (may be we can change them with a load settings in setup using XML settings)
+
 #define HOST "localhost"
 #define PORT 8000
 #define OUTPUT_WIDTH  1024
@@ -61,6 +62,9 @@
 #define FILENAME "videos/Movie_okjpg.mov"
 #define SCALE_FACTOR 0.5
 
+// ofxUI GUI
+#define GUIWIDTH 200
+#define GUISETTINGS "GUI/ofxui_settings.xml"
 
 //------------------------------------------------------------------
 // OPENCV DEFAULTS
@@ -118,6 +122,7 @@ private:
     ofVideoPlayer vidPlayer;
 #endif
     
+    // FUNCTIONS
     void ofSetup();
     void guiSetup();
     void cameraSetup();
@@ -125,7 +130,6 @@ private:
     void syphonSetup();
     void syphonDraw();
 #endif
-    void drawHelp();
     void drawDebugVideo();
     void blobSetup();
     void blobUpdate();
@@ -144,7 +148,6 @@ private:
     int spacerx;
     int spacery;
     int margin;
-    string helpStr;
     
     // OPENCV 2
     ofPixels background;
@@ -155,33 +158,21 @@ private:
     bool bNewFrame;
     ofColor targetColor;
     
-    // GUI
+    // ofxUI
     bool showGui;
-    ofxPanel gui;
-    ofxLabel guiTitle;
-    ofxLabel guiInstanceName;
-    ofxIntSlider blurLevel;
-    ofxIntSlider minAreaRadius;
-    ofxIntSlider maxAreaRadius;
-    ofxFloatSlider contourThreshold;
-    ofxIntSlider blobPersistence;
-    ofxIntSlider blobMaxDistance;
-    ofxIntSlider blurInputImage;
-    ofxToggle useTargetColor;
-    
-    // GUI EVENTS
-    void minRadiusChanged(int & minRadius);
-    void maxRadiusChanged(int & maxRadius);
-    void contourThresholdChanged(float & threshold);
-    void blobPersistenceChanged(int & persistence);
-    void blobMaxDistanceChanged(int & distance);
-    void useTargetColorChanged(bool & bChanged);
+    ofxUISuperCanvas *guiSonos;
+    bool useTargetColor;
+    int blurLevel;
+    int blurInputImage;
+    int minAreaRadius;
+    int maxAreaRadius;
+    float contourThreshold;
+    int blobPersistence;
+    int blobMaxDistance;
+    void guiEvent(ofxUIEventArgs &e);
     
     // SYPHON
 #ifdef _USE_SYPHON_VIDEO
-    ofxToggle sendToSyphon;
-    ofxSyphonServer syphonDiffTextureServer;
-    ofxSyphonServer syphonScreenServer;
     ofxSyphonServer syphonBlobTextureServer;
     ofFbo blobsFbo;
 #endif
