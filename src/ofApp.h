@@ -66,6 +66,10 @@
 #define GUIWIDTH 200
 #define GUISETTINGS "GUI/ofxui_settings.xml"
 
+// limit the max number of tracked blobs for velocity buffers
+#define BLOBMAX 5
+#define BUFFERSIZE 20
+
 //------------------------------------------------------------------
 // OPENCV DEFAULTS
 //------------------------------------------------------------------
@@ -176,4 +180,8 @@ private:
     // OSC
     ofxOscSender sender;
     ofxOscMessage m;
+    bool bOscContour;
+    
+    // VELOCITY BUFFERS
+    map<int, vector <float> > vbuffer;
 };

@@ -117,10 +117,9 @@ void ofApp::blobSetup()
 #endif
     bLearnBackground = true;
     targetColor = ofColor(255,255,255);
+
     contourFinder.setTargetColor(targetColor);
-    
     contourFinder.setUseTargetColor(useTargetColor);
-    
     contourFinder.setMinAreaRadius(minAreaRadius);
     contourFinder.setMaxAreaRadius(maxAreaRadius);
     contourFinder.setThreshold(contourThreshold);
@@ -134,5 +133,18 @@ void ofApp::blobSetup()
 void ofApp::oscSetup()
 {
     sender.setup(HOST, PORT);
+    // setup of std::map
+    for (int i =0; i<BLOBMAX; i++)
+    {
+        vbuffer.insert(pair<int, vector<float> >(i, vector<float>(BUFFERSIZE)));
+    }
+    
+#ifdef DEBUG
+    for ( map<int, vector<float> >::const_iterator it = vbuffer.begin(); it != vbuffer.end(); ++it)
+    {
+        cerr << "Actor: " << it->first << " vbuffer size: " << it->second.size() << endl;
+    }
+#endif
+    
     ofLogNotice() << "sending osc messages to " << ofToString(HOST) << ":" << ofToString(PORT) << endl;
 }

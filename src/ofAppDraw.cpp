@@ -102,7 +102,16 @@ void ofApp::drawDebugVideo()
             ofVec2f velocity = toOf(contourFinder.getVelocity(i));
             ofScale(5, 5);
             ofLine(0, 0, velocity.x, velocity.y);
-            ofPopMatrix();
+            ofPopMatrix();            
+//            if(tracker.existsPrevious(label))
+//            {
+//                ofSetColor(255,0,0);
+//                const cv::Rect& previous = tracker.getPrevious(label);
+//                const cv::Rect& current = tracker.getCurrent(label);
+//                ofVec2f previousPosition(previous.x + previous.width / 2, previous.y + previous.height / 2);
+//                ofVec2f currentPosition(current.x + current.width / 2, current.y + current.height / 2);
+//                ofLine(previousPosition, currentPosition);
+//            }
         }
     }
     

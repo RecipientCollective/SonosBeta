@@ -45,6 +45,9 @@ void ofApp:: guiSetup()
     guiSonos->addIntSlider("BLOB PERSISTENCE", 0, FRAMERATE*10, &blobPersistence);
     guiSonos->addIntSlider("BLOB MAX DISTANCE", 0, camWidth, &blobMaxDistance);
     guiSonos->addSpacer();
+    guiSonos->addLabel("OSC:");
+    guiSonos->addToggle("OSC SEND CONTOUR", &bOscContour);
+    guiSonos->addSpacer();
     guiSonos->addLabel("KEYS:");
     guiSonos->addLabel("[g] interface");
     guiSonos->addLabel("[h] debug view");

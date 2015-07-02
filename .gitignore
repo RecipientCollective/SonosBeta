@@ -4,6 +4,8 @@
 
 # videos
 bin/data/videos
+# gui settings
+bin/data/GUI
 
 # build files
 openFrameworks.a
