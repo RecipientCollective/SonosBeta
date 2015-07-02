@@ -41,7 +41,7 @@
 
 
 // Uncomment to activate VideoLive
-//#define _USE_LIVE_VIDEO
+#define _USE_LIVE_VIDEO
 #define _USE_SYPHON_VIDEO
 
 #ifdef _USE_SYPHON_VIDEO
@@ -184,4 +184,5 @@ private:
     
     // VELOCITY BUFFERS
     map<int, vector <float> > vbuffer;
+    map<int, vector <ofVec2f> > vpbuffer;
 };

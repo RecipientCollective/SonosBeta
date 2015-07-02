@@ -137,12 +137,17 @@ void ofApp::oscSetup()
     for (int i =0; i<BLOBMAX; i++)
     {
         vbuffer.insert(pair<int, vector<float> >(i, vector<float>(BUFFERSIZE)));
+        vpbuffer.insert(pair<int, vector<ofVec2f> >(i, vector<ofVec2f>(BUFFERSIZE)));
     }
     
 #ifdef DEBUG
     for ( map<int, vector<float> >::const_iterator it = vbuffer.begin(); it != vbuffer.end(); ++it)
     {
         cerr << "Actor: " << it->first << " vbuffer size: " << it->second.size() << endl;
+    }
+    for ( map<int, vector<ofVec2f> >::const_iterator vit = vpbuffer.begin(); vit != vpbuffer.end(); ++vit)
+    {
+        cerr << "Actor: " << vit->first << " vpbuffer size: " << vit->second.size() << endl;
     }
 #endif
     

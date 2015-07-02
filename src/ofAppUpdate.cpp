@@ -160,7 +160,6 @@ void ofApp::oscUpdate()
         // VELOCITY BUFFER
         if (i < BLOBMAX)
         {
-            // record velocity for vbuffer
             // record velocity for vbuffer meanvelocity
             vector<float> v = vbuffer[i];
             // erase first element
@@ -177,6 +176,21 @@ void ofApp::oscUpdate()
             m.addFloatArg(mean);
             sender.sendMessage(m);
             m.clear();
+            
+            // vpbuffer
+            vector<ofVec2f> vp = vpbuffer[i];
+            vp.erase(vp.begin());
+            vp.push_back(velocity);
+            vpbuffer[i] = vp;
+            ofVec2f centroid = centroid.average(vp.data(), vp.size());
+            addr.str(std::string());
+            addr << "/blob/" << i << "/centroidvelocity";
+            m.setAddress(addr.str());
+            m.addFloatArg(centroid.x);
+            m.addFloatArg(centroid.y);
+            sender.sendMessage(m);
+            m.clear();
+            
         }
     }
 }
